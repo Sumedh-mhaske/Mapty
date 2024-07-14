@@ -57,3 +57,25 @@ class Cycling extends Workout {
     return this.speed;
   }
 }
+
+class App {
+  #map;
+  #mapEvent;
+  #workouts = [];
+
+  constructor() {
+    this._getPosition();
+    form.addEventListener("submit", this._newWorkout.bind(this));
+    inputType.addEventListener("change", this._toggleElevationfield);
+  }
+
+  _getPosition() {
+    if (navigator.geolocation)
+      navigator.geolocation.getCurrentPosition(
+        this._loadMap.bind(this),
+        function () {
+          alert("Could not get your position");
+        }
+      );
+  }
+}
