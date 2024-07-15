@@ -13,6 +13,7 @@ const inputElevation = document.querySelector(".form__input--elevation");
 class Workout {
   date = new Date();
   id = (Date.now() + "").slice(-10);
+  clicks = 0;
 
   constructor(coords, distance, duration) {
     this.coords = coords;
@@ -23,6 +24,14 @@ class Workout {
   _setDescription() {
     // prettier-ignore
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+    this.description = `${this.type[0].toUpperCase()}${this.type.slice(1)} on ${
+      months[this.date.getMonth()]
+    } ${this.date.getDate()}`;
+  }
+
+  click() {
+    this.clicks++;
   }
 }
 
@@ -33,6 +42,7 @@ class Running extends Workout {
     super(coords, distance, duration);
     this.cadence = cadence;
     this.calcPace();
+    this._setDescription();
   }
 
   calcPace() {
@@ -49,6 +59,7 @@ class Cycling extends Workout {
     super(coords, distance, duration);
     this.elevationGain = elevationGain;
     this.calcSpeed();
+    this._setDescription();
   }
 
   calcSpeed() {
@@ -60,6 +71,7 @@ class Cycling extends Workout {
 
 class App {
   #map;
+  #mapZoomLevel = 13;
   #mapEvent;
   #workouts = [];
 
