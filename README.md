@@ -4,6 +4,10 @@
     MAPTY is a live location-based website built using the JavaScript library <strong>Leaflet</strong>. It allows users to track their running and cycling activities by marking locations on the map, and displaying the corresponding information in popups. Users can input the type of activity (running/cycling), distance, duration, and other relevant details. The data is stored using <strong>local storage</strong>, so it persists even after the page is refreshed or closed.
 </p>
 
+<h2>Live Demo</h2>
+
+[Mapty App](app-mapty.vercel.app)
+
 <h2>Made with</h2>
 <ul>
     <li>HTML</li>
