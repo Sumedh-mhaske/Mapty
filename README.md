@@ -6,7 +6,7 @@
 
 <h2>Live Demo</h2>
 
-[Mapty App](app-mapty.vercel.app)
+mapty-git-main-sumedh-mhaskes-projects.vercel.app
 
 <h2>Made with</h2>
 <ul>
